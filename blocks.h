@@ -3,6 +3,7 @@
 
 #define MAX_GRID_HEIGHT 9
 #define MAX_GRID_WIDTH 9
+#define MAX_BLOCK_SIZE 10
 
 typedef struct {
     int width;
