@@ -8,4 +8,6 @@ include_directories(..)
 add_executable(C
         main.c
         blocks.h
-        blocks.c)
+        blocks.c
+        printBlockUtils.h
+        printBlockUtils.c)
