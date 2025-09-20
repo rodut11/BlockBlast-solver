@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "blocks.h"
-#include "utils/util_blocks.h"
-#include "utils/debug/debug_blocks.h"
+#include "../utils/util_blocks.h"
+#include "../utils/debug/debug_blocks.h"
 
 int main() {
     //initialize grid

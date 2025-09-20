@@ -1,6 +1,6 @@
 #include "util_blocks.h"
 #include <stdio.h>
-#include "../blocks.h"
+#include "../src/blocks.h"
 
 void grid_print(int grid[MAX_GRID_HEIGHT][MAX_GRID_WIDTH]) {
 
