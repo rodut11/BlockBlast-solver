@@ -9,5 +9,7 @@ add_executable(C
         main.c
         blocks.h
         blocks.c
-        utils/util_print_block.h
-        utils/util_print_block.c)
+        utils/util_blocks.h
+        utils/util_blocks.c
+        utils/debug/debug_print_blocks.c
+        utils/debug/debug_blocks.h)

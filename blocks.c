@@ -329,8 +329,8 @@ block normal_Lshape_r270  = {
 block Zshape_r0 = {
     .width = 3,
     .height = 2,
-    .centerX = 1,
-    .centerY = 1,
+    .centerX = 0,
+    .centerY = 0,
     .pattern = {
         {1,1,0},
         {0,1,1}
@@ -340,8 +340,8 @@ block Zshape_r0 = {
 block Zshape_r90 = {
     .width = 2,
     .height = 3,
-    .centerX = 1,
-    .centerY = 1,
+    .centerX = 0,
+    .centerY = 0,
     .pattern = {
         {1,0},
         {1,1},
@@ -353,7 +353,7 @@ block Zshape_r180 = {
     .width = 3,
     .height = 2,
     .centerX = 1,
-    .centerY = 1,
+    .centerY = 0,
     .pattern = {
         {0,1,1},
         {1,1,0}
@@ -363,8 +363,8 @@ block Zshape_r180 = {
 block Zshape_r270 = {
     .width = 2,
     .height = 3,
-    .centerX = 1,
-    .centerY = 1,
+    .centerX = 0,
+    .centerY = 0,
     .pattern = {
         {0,1},
         {1,1},

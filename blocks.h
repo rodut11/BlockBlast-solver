@@ -1,8 +1,8 @@
 #ifndef BLOCKS_H
 #define BLOCKS_H
 
-#define MAX_GRID_HEIGHT 9
-#define MAX_GRID_WIDTH 9
+#define MAX_GRID_HEIGHT 8
+#define MAX_GRID_WIDTH 8
 #define MAX_BLOCK_SIZE 10
 
 typedef struct {
@@ -39,8 +39,6 @@ extern block short_line_horizontal;
 
 extern block mini_line_horizontal;
 extern block mini_line_vertical;
-
-
 
 //squares
 extern block small_square;
