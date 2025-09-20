@@ -36,7 +36,7 @@ extern block medium_line_horizontal;
 
 extern block short_line_vertical;
 extern block short_line_horizontal;
-g
+
 extern block mini_line_horizontal;
 extern block mini_line_vertical;
 
