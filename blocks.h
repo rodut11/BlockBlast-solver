@@ -10,7 +10,7 @@ typedef struct {
     int height;
     int centerX;
     int centerY;
-    int pattern[4][4]; // max 4x4 for simplicity
+    int pattern[MAX_BLOCK_SIZE][MAX_BLOCK_SIZE]; // max 4x4 for simplicity
 } block;
 
 // Declare the blocks as extern so other files can use them
