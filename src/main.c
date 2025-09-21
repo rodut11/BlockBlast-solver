@@ -8,6 +8,7 @@ int main() {
     int grid[MAX_GRID_HEIGHT][MAX_GRID_WIDTH] = {0};
 
     place_block(grid, large_square, 4, 1);
+    place_block(grid, large_square, 2, 1);
 
     grid_print(grid);
 

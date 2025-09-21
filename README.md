@@ -89,4 +89,4 @@ This project will be licensed under GPLv3 (FOSS friendly).
 
 ## Credits
 
-`ANSI-Color-codes.h` - [RabaDabaDoba on Github Gist](https://github.com/RabaDabaDoba) - 
+`ANSI-Color-codes.h` - [RabaDabaDoba on Github Gist](https://github.com/RabaDabaDoba) - [Link to gist](https://gist.github.com/RabaDabaDoba/145049536f815903c79944599c6f952a)
