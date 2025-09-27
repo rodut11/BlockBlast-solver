@@ -12,6 +12,11 @@ add_executable(C
         utils/util_blocks.h
         utils/util_blocks.c
         utils/debug/debug_print_blocks.c
-        utils/debug/debug_blocks.h
+        utils/debug/debug.h
         include/ANSI-Color-Codes.h
-        )
+        utils/waydroid/waydroid_comm.c
+        utils/waydroid/waydroid_comm.h
+        include/stb_image.h
+)
+
+#target_link_libraries(C PRIVATE m)

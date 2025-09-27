@@ -49,6 +49,7 @@ void place_block(int grid[8][8], block b, int pivotX, int pivotY) {
 
     if (!check_collision(grid, b, pivotX, pivotY))
         return; // abort if any collision
+
     // loop through the pattern on x and y-axis
     for (int i = 0; i < b.height; i++) {
         for (int j = 0; j < b.width; j++) {
