@@ -25,3 +25,6 @@ img = cv2.imdecode(img_data, cv2.IMREAD_COLOR)
 cv2.imshow('Screen', img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+#x1, y1 = 693, 711  # top-left corner
+# x2, y2 = 1183, 855  # bottom-right corner

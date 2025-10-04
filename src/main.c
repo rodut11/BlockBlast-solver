@@ -2,7 +2,8 @@
 #include "blocks.h"
 #include <string.h>
 #include "../utils/util_blocks.h"
-#include "../utils/waydroid/waydroid_comm.h"
+#include "../utils/waydroid/C/waydroid_comm.h"
+
 #include <stdlib.h>
 #include "../utils/debug/debug.h"
 
@@ -13,6 +14,15 @@ int main() {
     waydroid_connect("192.168.240.112:5555");
     size_t size;
     unsigned char* image = get_screencap(&size);
-    open_app("com.supercell.clashroyale/com.supercell.titan.GameApp");
+
+    printf("%p\n", image);
+    printf("writing image igg");
+
+    printf("Image size: %zu bytes\n", size);
+
+    FILE *output = fopen("output.png", "w");
+    fwrite(image, size, 1, output);
+
+
 
 }

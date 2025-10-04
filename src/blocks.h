@@ -55,10 +55,10 @@ extern block Tshape_r180;
 extern block Tshape_r270;
 
 // normal L-shape
-extern block normal_Lshape_r0;
-extern block normal_Lshape_r90;
+extern block normal_Lshape_vertical_1;
+extern block normal_Lshape_down_1;
 extern block normal_Lshape_r180;
-extern block normal_Lshape_r270;
+extern block normal_Lshape_up_1;
 
 // Z and S shapes
 extern block Zshape_r0;

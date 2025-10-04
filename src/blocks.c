@@ -279,7 +279,7 @@ block Tshape_r270 = {
     }
 };
 
-block normal_Lshape_r0 = {
+block normal_Lshape_vertical_1 = {
     .width = 2,
     .height = 3,
     .centerX = 0,
@@ -291,18 +291,19 @@ block normal_Lshape_r0 = {
     }
 };
 
-block normal_Lshape_r90  = {
-    .width = 3,
-    .height = 2,
+block normal_Lshape_vertical_2 = {
+    .width = 2,
+    .height = 3,
     .centerX = 0,
     .centerY = 0,
     .pattern = {
-        {1, 1, 1},
-        {1, 0, 0}
+        {0,1},
+        {0,1},
+        {1,1}
     }
 };
 
-block normal_Lshape_r180 = {
+block normal_Lshape_vertical_3 = {
     .width = 2,
     .height = 3,
     .centerX = 0,
@@ -314,13 +315,60 @@ block normal_Lshape_r180 = {
     }
 };
 
-block normal_Lshape_r270  = {
+
+block normal_Lshape_vertical_4 = {
+    .width = 2,
+    .height = 3,
+    .centerX = 0,
+    .centerY = 0,
+    .pattern = {
+        {1,1},
+        {1,0},
+        {1,0}
+    }
+};
+
+block normal_Lshape_down_1  = {
+    .width = 3,
+    .height = 2,
+    .centerX = 0,
+    .centerY = 0,
+    .pattern = {
+        {1, 1, 1},
+        {1, 0, 0}
+    }
+};
+
+block normal_Lshape_down_2  = {
+    .width = 3,
+    .height = 2,
+    .centerX = 0,
+    .centerY = 0,
+    .pattern = {
+        {1, 1, 1},
+        {0, 0, 1}
+    }
+};
+
+
+block normal_Lshape_up_1  = {
     .width = 3,
     .height = 2,
     .centerX = 0,
     .centerY = 0,
     .pattern = {
         {0, 0, 1},
+        {1, 1, 1}
+    }
+};
+
+block normal_Lshape_up_2  = {
+    .width = 3,
+    .height = 2,
+    .centerX = 0,
+    .centerY = 0,
+    .pattern = {
+        {1, 0, 0},
         {1, 1, 1}
     }
 };
