@@ -3,7 +3,6 @@
 #include <string.h>
 #include <unistd.h>
 //#define STB_IMAGE_IMPLEMENTATION
-#include <stdint.h>
 
 #include "../../../src/blocks.h"
 
@@ -134,7 +133,7 @@ void get_block() {
     //     exit(1);
     // }
 
-    char buf[128];
+    char buf[192];
     int c;
     size_t n;
     size_t i = 0;
@@ -149,12 +148,14 @@ void get_block() {
 
         sizes[i++] = (unsigned char)c;
 
-        if (i >6) {
+        if (i > 6) {
             fprintf(stderr, "Unexpected more than 6 header bytes!\n");
             break;
         }
     }
 
+    int num_blocks = (int)i / 2;  // i is number of bytes read from header
+    if (num_blocks > 3) num_blocks = 3; // in case your array only supports 3 blocks
 
     // // print sizes
     // for (int j = 0; j < i; j += 2) {
@@ -192,7 +193,8 @@ void get_block() {
 
     pclose(fp);
 
-    for (int b = 0; b < 3; b++) {
+    for (int b = 0; b < num_blocks; b++) {
+
         printf("Block %d:\n", b);
         for (int r = 0; r < sizes[b*2]; r++) {      // use sizes array for row count
             for (int d = 0; d < sizes[b*2 + 1]; d++) { // and for col count
