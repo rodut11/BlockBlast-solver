@@ -8,6 +8,6 @@
 void waydroid_disconnect();
 void waydroid_connect(const char *host);
 unsigned char* get_screencap(size_t* out_size);
-void open_app(const char *inputapp);
+void open_app(const char *input_app);
 
 #endif //C_WAYDROID_COMM_H

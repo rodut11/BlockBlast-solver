@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "../util_blocks.h"
 #include "../../src/blocks.h"
-
+/*
 void list_blocks() {
 
     block blocks[] = {
@@ -44,4 +44,4 @@ void list_blocks() {
         block_print(blocks[i]);
     }
 
-}
+}*/

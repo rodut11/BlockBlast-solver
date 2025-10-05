@@ -16,7 +16,6 @@ add_executable(C
         include/ANSI-Color-Codes.h
         utils/waydroid/C/waydroid_comm.c
         utils/waydroid/C/waydroid_comm.h
-        include/stb_image.h
 )
 
 #target_link_libraries(C PRIVATE m)

@@ -45,9 +45,9 @@ void block_print(block block) {
     }
 }
 
-void place_block(int grid[8][8], block b, int pivotX, int pivotY) {
+void place_simulation_block(int grid[8][8], block b, int pivotX, int pivotY) {
 
-    if (!check_collision(grid, b, pivotX, pivotY))
+    if (!check_simulation_collision(grid, b, pivotX, pivotY))
         return; // abort if any collision
 
     // loop through the pattern on x and y-axis
@@ -68,10 +68,56 @@ void place_block(int grid[8][8], block b, int pivotX, int pivotY) {
     }
 }
 
-bool check_collision(int grid[8][8], block b, int pivotX, int pivotY) {
+void place_game_block(int grid[8][8], undefined_block ub, int pivotX, int pivotY) {
+
+    if (!check_collision_game_block(grid, ub, pivotX, pivotY))
+        return; // abort if any collision
+
+    // loop through the pattern on x and y-axis
+    for (int i = 0; i < ub.col; i++) {
+        for (int j = 0; j < ub.row; j++) {
+
+            if (ub.pattern[i][j] != 0) {
+
+                // gx, respectively gy stand for grid x/y
+                // these two are equal to the pivot plus j and respectively i
+                int gx = pivotX + j;
+                int gy = pivotY + i;
+                // place the block, this works by getting the cell in b.pattern, and placing it onto the grid at the
+                // coordinates calculated earlier
+                grid[gy][gx] = ub.pattern[i][j];
+            }
+        }
+    }
+}
+
+bool check_simulation_collision(int grid[8][8], block b, int pivotX, int pivotY) {
 
     for (int i = 0; i < b.height; i++) {
         for (int j = 0; j < b.width; j++) {
+            if (b.pattern[i][j] != 0) {
+                int gx = pivotX + j;
+                int gy = pivotY + i;
+
+                // collision or out-of-bounds
+                if (gx < 0 || gx >= 8 || gy < 0 || gy >= 8 || grid[gy][gx] != 0) {
+                    // if the coordinate of the block on x-axis on the grid (gx) is less than 0 or >=  8 or gy < 0 or
+                    // gy >= 8 OR grid at position gx or gy is not 0, then not able to print and return false
+                    printf(RED "Can't place block at (X=%d;Y=%d)!\n" COLOR_RESET, pivotX, pivotY);
+                    return false;
+                }
+            }
+        }
+    }
+
+    return true;
+}
+
+// not the best method but it works...
+bool check_collision_game_block(int grid[8][8], undefined_block b, int pivotX, int pivotY) {
+
+    for (int i = 0; i < b.col; i++) {
+        for (int j = 0; j < b.row; j++) {
             if (b.pattern[i][j] != 0) {
                 int gx = pivotX + j;
                 int gy = pivotY + i;

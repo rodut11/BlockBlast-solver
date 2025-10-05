@@ -14,14 +14,9 @@ int main() {
     waydroid_connect("192.168.240.112:5555");
     size_t size;
     unsigned char* image = get_screencap(&size);
+    grid_print(grid);
+    get_block();
 
-    printf("%p\n", image);
-    printf("writing image igg");
-
-    printf("Image size: %zu bytes\n", size);
-
-    FILE *output = fopen("output.png", "w");
-    fwrite(image, size, 1, output);
 
 
 
