@@ -16,7 +16,8 @@ int main() {
     unsigned char* image = get_screencap(&size);
     grid_print(grid);
     get_block();
-
+    get_grid(grid);
+    grid_print(grid);
 
 
 

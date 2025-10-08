@@ -4,7 +4,7 @@ import cv2
 import sys
 
 # ---------------- Load screencap ----------------
-lib = ctypes.CDLL('/home/rodut11/Coding/C/Block-blast-solver/utils/waydroid/build/libwaydroid.so')
+lib = ctypes.CDLL('../utils/waydroid/build/libwaydroid.so')
 lib.get_screencap.argtypes = [ctypes.POINTER(ctypes.c_size_t)]
 lib.get_screencap.restype = ctypes.POINTER(ctypes.c_ubyte)
 

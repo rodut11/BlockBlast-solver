@@ -10,6 +10,7 @@
 char *waydroid_host = NULL;
 char *app = NULL;
 
+// create blocks struct with max 3 blocks, this should contain the random blocks given by the game
 undefined_block blocks[3] = {0};
 
 void waydroid_connect(const char *host) {
@@ -121,7 +122,7 @@ void open_app(const char *input_app) {
 }
 
 void get_block() {
-    FILE *fp = popen("python3 /home/rodut11/Coding/C/Block-blast-solver/utils/waydroid/python/getblock.py", "r");
+    FILE *fp = popen("python3 ../utils/waydroid/python/get_block.py", "r");
     if (!fp) {
         perror("popen");
         exit(1);
@@ -204,5 +205,34 @@ void get_block() {
         }
         printf("\n");
     }
+
+}
+
+void get_grid(int grid[8][8]) {
+    FILE *fp = popen("python3 ../utils/waydroid/python/get_grid.py", "r");
+    if (!fp) {
+        perror("popen");
+        exit(1);
+    }
+
+    // FILE *out = fopen("out", "wb");
+    // if (!out) {
+    //     perror("fopen");
+    //     exit(1);
+    // }
+
+    int c;
+
+    int row = 0, col = 0;
+    while ((c = fgetc(fp)) != EOF) {
+        unsigned char byte = (unsigned char)c;
+        if (byte == 0xFE) { //EOR - End Of Row
+            row++; // go down one row and go at the start
+            col = 0;
+        }else {
+            grid[row][col++] = byte;
+        }
+    }
+
 
 }
