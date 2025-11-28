@@ -33,5 +33,3 @@ extern "C" void get_grid_origin(int* x, int* y) {
         *y = gy1 + ((float)r + 0.5 * (height/8.0));
     }
 }
-
-

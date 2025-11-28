@@ -1,7 +1,7 @@
 #include <iostream>
 #include <opencv2/imgproc.hpp>
 #include "internal_vision.hpp"
-#include "Block-blast-solver/include/util_blocks.h"
+#include "blockcrack/include/util_blocks.h"
 
 extern "C" void get_grid(int grid[8][8]) {
     // virtual grid
