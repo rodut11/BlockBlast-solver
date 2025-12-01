@@ -9,14 +9,7 @@ extern "C" {
     void get_grid_origin(int* x, int* y);
     void get_grid(int grid[8][8]);
     void get_block();
-
-    // Add this
-    typedef struct {
-        int x;
-        int y;
-    } point_t;
-
-    void get_block_coord(point_t centers[3]);
+    void get_block_coord();
 
 #ifdef __cplusplus
 }

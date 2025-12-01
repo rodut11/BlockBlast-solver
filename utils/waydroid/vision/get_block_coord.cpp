@@ -5,17 +5,10 @@
 #include "internal_vision.hpp"
 #include "../../../assets/sample.h"
 #include "get_bounding_box.hpp"
+#include "../../../include/blocks.h"
 #include <array>
 
-extern "C" {
-    typedef struct {
-        int x;
-        int y;
-    } point_t;
-}
-
-
-extern "C" void get_block_coord(point_t centers[3]) {
+extern "C" void get_block_coord() {
     std::vector<u_char> buffer = grab_screencap();
     cv::Mat img = decode_screencap(buffer);
 
@@ -32,7 +25,7 @@ extern "C" void get_block_coord(point_t centers[3]) {
         std::cerr << "Failed to decode image" << std::endl;
         return;
     }
-
+    std::array<undefined_block, 3> blocks;
     std::array<bounding_box,3> bounding_boxes = get_bounding_box(region, cell_template);
 
     for (int i = 0; i < 3; i++) {
@@ -42,7 +35,7 @@ extern "C" void get_block_coord(point_t centers[3]) {
         int xc = gx1 + bounding_boxes[i].x1 + width / 2;
         int yc = gy1 + bounding_boxes[i].y1 + height / 2;
 
-        centers[i].x = xc;
-        centers[i].y = yc;
+        blocks[i].sx = xc;
+        blocks[i].sy = yc;
     }
 }
