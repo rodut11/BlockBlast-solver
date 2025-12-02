@@ -3,9 +3,9 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/opencv.hpp>
 #include "internal_vision.hpp"
-#include "../../../assets/sample.h"
+#include "../../assets/sample.h"
 #include "get_bounding_box.hpp"
-#include "../../../include/blocks.h"
+#include "../../include/blocks.h"
 #include <array>
 
 extern "C" void get_block_coord() {

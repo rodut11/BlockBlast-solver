@@ -5,10 +5,10 @@
 #include "../include/waydroid/waydroid_comm.h"
 
 #include <stdlib.h>
-#include "../utils/debug/debug.h"
-#include "../utils/waydroid/vision/vision.h"
+#include "utils/debug/debug.h"
+#include "vision/vision.h"
 
-int main() {
+int main(int argc, char **argv) {
     int grid[MAX_GRID_HEIGHT][MAX_GRID_WIDTH] = {0};
 
     waydroid_connect("192.168.240.112:5555");
@@ -24,6 +24,4 @@ int main() {
     get_grid_origin(&x, &y);
     printf("Grid origin: %d,%d\n", x, y);
 
-    // free(image);
-    return 0;
 }
