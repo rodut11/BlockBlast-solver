@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "../../include/util_blocks.h"
-#include "../../include/blocks.h"
+#include "../../../include/util_blocks.h"
+#include "../../../include/blocks.h"
 /*
 void list_blocks() {
 
