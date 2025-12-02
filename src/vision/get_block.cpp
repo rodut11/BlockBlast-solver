@@ -4,10 +4,10 @@
 #include <opencv2/opencv.hpp>
 #include "internal_vision.hpp"
 #include <array>
-#include "../../../include/blocks.h"
+#include "../../include/blocks.h"
 
 //include sample image as bytes (converted using xxd -i)
-#include "../../../assets/sample.h"
+#include "../../assets/sample.h"
 
 #define THRESH 0.8
 
@@ -86,6 +86,9 @@ extern "C" void get_block() {
             cv::Mat display;
             cv::cvtColor(box_region, display, cv::COLOR_GRAY2BGR);
 
+            // create single-channel mask
+            cv::Mat mask = cv::Mat::zeros(box_region.size(), CV_8UC1);
+
             // detect cells
             while (true) {
                 // compute minVal, maxVal, minLoc, maxLoc
@@ -102,11 +105,13 @@ extern "C" void get_block() {
                 cv::floodFill(result, maxLoc, cv::Scalar(-1));
 
                 // write on display
-                //cv::rectangle(display, rect, cv::Scalar(255), cv::FILLED);
+                cv::rectangle(display, rect, cv::Scalar(255), cv::FILLED);
+                cv::rectangle(mask, rect, cv::Scalar(255), cv::FILLED);
+
             }
 
-            // cv::imshow("block", display);
-            // cv::waitKey(0);
+             cv::imshow("block", mask);
+             cv::waitKey(0);
         }
 
     }
