@@ -74,7 +74,7 @@ Planned: add unit tests (probably with a simple test runner in C).
 
 ---
 
-## Dev Logs
+## Devblog
 
 You can follow the progress on my **[blog](https://rodut11.dev)**
 
