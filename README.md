@@ -33,29 +33,6 @@ The project is still in early stages, but the core idea is to automatically play
   - Handles grid bounds so blocks don’t overflow outside
 
 ---
-
-## Project Structure
-
-```
-.
-├── CMakeLists.txt
-├── include
-│   └── ANSI-Color-Codes.h
-├── LICENSE
-├── README.md
-├── src
-│   ├── blocks.c
-│   ├── blocks.h
-│   └── main.c
-└── utils
-    ├── debug
-    │   ├── debug_blocks.h
-    │   └── debug_print_blocks.c
-    ├── util_blocks.c
-    └── util_blocks.h
-```
-
----
 ## Roadmap
 
 - [x] Define basic blocks  
@@ -85,7 +62,7 @@ You can follow the progress on my **[blog](https://rodut11.dev)**
 
 ## License
 
-This project is be licensed under GPLv3.
+This project is licensed under GPLv3.
 
 ---
 
